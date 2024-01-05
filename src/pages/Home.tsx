@@ -1,9 +1,21 @@
-export default function Home() {
+import useResponsive from "../hook/useResposive"
 
-  return (
-    <>
-      <div>Hello World!</div>
-    </>
-  )
+export default function Home() {
+  const { isSmall } = useResponsive();
+
+  if (isSmall) {
+    return (
+      <>
+        <div>Hello World Phone!</div>
+      </>
+    )
+  }
+  else {
+    return (
+      <>
+        <div>Hello World Monitor!</div>
+      </>
+    )
+  }
 }
 
